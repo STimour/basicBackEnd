@@ -1,0 +1,156 @@
+### Connexion User
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "tim@tim.com",
+  "password": "3151445"
+}
+
+### Connexion User
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "tom@tom.com",
+  "password": "3151445"
+}
+
+###
+GET http://localhost:1337/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJUb20iLCJlbWFpbCI6InRvbUB0b20uY29tIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwidXBkYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwiaWF0IjoxNzAyMDI3OTE4LCJleHAiOjE3MDIwMzE1MTh9.AySQupbmkDR5A0Jn_8e-p_SZv3eRSYpzss0Mp1teld0
+
+
+###Create User
+POST http://localhost:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username": "Tom",
+  "email": "tom@tom.com",
+  "password": "3151445"
+}
+
+###Create User
+POST http://localhost:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username": "Tom",
+  "email": "tim@tim.com",
+  "password": "3151445"
+}
+
+###Get User informtion 
+GET http://localhost:1337/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDE4ODU1NzMsImRhdGEiOjIsImlhdCI6MTcwMTg4MTk3M30.F_VfCyop428GnFdHf68q_puiIScIfOjBY5wnfa-isUg
+
+###Change pwd User
+POST http://localhost:1337/api/auth/change-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUb20iLCJlbWFpbCI6InRpbUB0aW0uY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkc2pzcUpudjJveTB0NjlERWUzenRkZW5Pc0Q1dlZZT1l5b2xpZ3VYaVNQSFJvTHVRcE0wNTIiLCJjcmVhdGVkQXQiOiIyMDIzLTEyLTA3VDEyOjU2OjE4LjYwNFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTEyLTA3VDEyOjU2OjE4LjYwNFoiLCJpYXQiOjE3MDE5NjE0ODQsImV4cCI6MTcwMTk2NTA4NH0.jEYkLKUd7n0rFObSarYcNL2HW2ldStgbOxX-W0z30JI
+
+{
+  "currentPassword": "3151445",
+  "password": "1445tt",
+  "passwordConfirmation": "1445tt"
+
+}
+
+###Create FreeGame
+POST http://localhost:1337/api/free-games
+Content-Type: application/json
+
+{
+  "data": {
+    "Name": "jojo",
+    "Description" : "I'm baby farm-to-table seitan mukbang pop-up venmo hammock enamel pin freegan. Hammock scenester food truck banjo bicycle rights leggings, marxism before they sold out disrupt try-hard. Blog prism yuccie meh, cold-pressed ennui schlitz master cleanse retro echo park ethical everyday carry pitchfork.",
+    "Image" : "https://unsplash.com/fr/photos/la-paume-gauche-de-la-personne-sur-le-point-dattraper-des-des-noirs-C3T8KTZxTFM"
+  }
+}
+
+###Create FreeGame
+POST http://localhost:1337/api/free-games
+Content-Type: application/json
+
+{
+  "data": {
+    "Name": "Tuco",
+    "Description" : " riches, jg. ",
+    "Image" : "https://heisenbergipsum.com/evidence/heisenberg-blue.png"
+  }
+}
+
+###Display FreeGames
+GET http://localhost:1337/api/free-games
+
+###Display One FreeGame
+GET http://localhost:1337/api/free-games/2
+
+###Modify a FreeGame
+PUT http://localhost:1337/api/free-games/2
+Content-Type: application/json
+
+{
+  "data": {
+    "Name": "Jesse",
+    "Description": "Four pounds... foooour pounds as if two pounds wasn't bad enough. we're talking two three hundred boxes of sinus pills there ain't that many Smurfs in the world. So no sudo? So you do have a plan! Yeah, Mr. White! Yeah, science",
+    "Image": "https://images.immediate.co.uk/production/volatile/sites/3/2019/10/breaking-bad-jesse-11b6c49.jpg?quality=90&webp=true&resize=1000,667"
+  }
+}
+
+###Delete one FreeGame
+DELETE http://localhost:1337/api/free-games/2
+
+###Delete one OfficialGame
+DELETE http://localhost:1337/api/official-games/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDE4ODkwMzMsImRhdGEiOjIsImlhdCI6MTcwMTg4NTQzM30.b3LcvnSGN5zgVOyxsTg6kUQ9rVG5oK42zrFsJej-ntk
+###Display officialGame
+GET http://localhost:1337/api/official-games
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDE4ODk5MDksImlhdCI6MTcwMTg4NjMwOX0.-uxvWnlD1Hv5qzm-hzLyGupvwofkoYseOFhjz9cL1GI
+
+###Create an OfficielGame with User's token
+POST http://localhost:1337/api/official-games
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJUb20iLCJlbWFpbCI6InRvbUB0b20uY29tIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwidXBkYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwiaWF0IjoxNzAyMDI1ODUzLCJleHAiOjE3MDIwMjk0NTN9.m_OuXQyToDwmti99XxG4NxauziOnTTuSWQBwowhjKrY
+
+{
+  "data": {
+    "Name": "Hank",
+    "Description": "Marie, I said Cheetos, not Fritos. I must've said Cheetos like ten times. You need me to write it down for you?e",
+    "Image": "https://images.immediate.co.uk/production/volatile/sites/3/2019/10/breaking-bad-jesse-11b6c49.jpg?quality=90&webp=true&resize=1000,667",
+    "Prix": 10.99
+  }
+}
+
+###Create an OfficielGame with User's token
+POST http://localhost:1337/api/official-games
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJUb20iLCJlbWFpbCI6InRvbUB0b20uY29tIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwidXBkYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwiaWF0IjoxNzAyMDI1ODUzLCJleHAiOjE3MDIwMjk0NTN9.m_OuXQyToDwmti99XxG4NxauziOnTTuSWQBwowhjKrY
+
+{
+  "data": {
+    "Name": "Saul",
+    "Description": "Congratulations, you've just left your family a second hand Subaru. ",
+    "Image": "https://images.immediate.co.uk/production/volatile/sites/3/2019/10/breaking-bad-jesse-11b6c49.jpg?quality=90&webp=true&resize=1000,667",
+    "Prix": 10.99
+  }
+}
+
+###Create an OfficielGame
+POST http://localhost:1337/api/official-games
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJUb20iLCJlbWFpbCI6InRvbUB0b20uY29tIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwidXBkYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwiaWF0IjoxNzAyMDI1ODUzLCJleHAiOjE3MDIwMjk0NTN9.m_OuXQyToDwmti99XxG4NxauziOnTTuSWQBwowhjKrY
+
+{
+  "data": {
+    "Name": "Donald",
+    "Description": "You miserable little smack head, get the hell out! You're going back to rehab - today, now. Eighteen Months you have been clean for eighteen months, Jane, why, why do you do it? Lying to me, shacking up and using with this scumbag, this loser!",
+    "Image": "https://images.immediate.co.uk/production/volatile/sites/3/2019/10/breaking-bad-jesse-11b6c49.jpg?quality=90&webp=true&resize=1000,667",
+    "Prix": 15.99
+  }
+}
+
+###Get OfficielGames
+GET http://localhost:1337/api/official-games
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJUb20iLCJlbWFpbCI6InRvbUB0b20uY29tIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwidXBkYXRlZEF0IjoiMjAyMy0xMi0wN1QxMzoyNzo1OS4xMjBaIiwiaWF0IjoxNzAyMDI1ODUzLCJleHAiOjE3MDIwMjk0NTN9.m_OuXQyToDwmti99XxG4NxauziOnTTuSWQBwowhjKrY
