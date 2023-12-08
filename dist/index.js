@@ -60,11 +60,11 @@ APP.use((0, cors_1.default)({
 APP.use(body_parser_1.default.json());
 //ANCHOR Gestion des routes
 const apiRouter = express_1.default.Router();
+APP.use("/api", apiRouter);
 apiRouter.use('/auth', auth_1.authRouter);
 apiRouter.use('/free-games', freeGame_1.freeGameRouter);
 apiRouter.use('/official-games', officialGame_1.officialGameRouter);
 apiRouter.use('/users', users_1.userRouter);
-APP.use("/api", apiRouter);
 APP.get('/', (req, res) => {
     res.send('Express + TypeScript Server');
 });

@@ -59,12 +59,13 @@ APP.use(bodyParser.json())
 //ANCHOR Gestion des routes
 const apiRouter = express.Router()
 
+APP.use("/api", apiRouter);
+
 apiRouter.use('/auth', authRouter)
 apiRouter.use('/free-games', freeGameRouter);
 apiRouter.use('/official-games', officialGameRouter);
 apiRouter.use('/users', userRouter);
 
-APP.use("/api", apiRouter);
 
 APP.get('/', (req, res) => {
   res.send('Express + TypeScript Server');

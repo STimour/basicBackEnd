@@ -3,8 +3,8 @@ import { User, user } from "../model/User";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
-import { DecodeToken, checkToken } from "../middlewares/checkToken";
-import { decode } from "punycode";
+import { checkToken } from "../middlewares/checkToken";
+
 
 export const authRouter = Router()
 
